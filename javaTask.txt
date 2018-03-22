@@ -1,0 +1,13 @@
+- hacer correr el helloWorld
+- Veterinaria
+  - Registrar pacientes: diferentes animales (silvestres domesticos)
+    Ingresar datos del paciente (datos x linea de comando, nombre edad raza)
+  - Actualizar datos del paciente
+  - Eliminar datos del paciente
+  - Mostrar datos del paciente (datos del duenio tb)
+
+- Interfaz de linea de comandos
+
+Jueves en la tarde entrega.
+
+Animales silvestres, domesticos, exoticos
