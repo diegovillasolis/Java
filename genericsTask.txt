@@ -1,0 +1,18 @@
+Generics
+upper Bounding
+over Bounding
+hash code object	
+
+System.out.println(maximun("pear", "apple", "orange"));
+
+System.out.println(maximun(false, false, true)); // Xq funciona esto, como se hace internamente la comparacion
+
+List<Integer> ints = new ArrayList<Integer>();
+ints.add(2);
+List<? extends Number> nums = ints;//Allowed becuase of wildcards
+nums.add(3,14) //This is not allowed now afeter setting an upperbound
+Integer x = ints.get(1)
+//xq, como
+
+.net
+

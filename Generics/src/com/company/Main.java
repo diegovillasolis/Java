@@ -42,6 +42,7 @@ public class Main {
         Person p2 = new Person("Pepe2", 24);
         Person p3 = new Person("Pepe3", 26);
         System.out.println(maximun(p1,p2,p3).getName());
+        System.out.println(maximun(false, false, true) + " Booleans");
 
         List<Animal> animalList = new ArrayList<>();
         List<Cat> catList = new ArrayList<>();
