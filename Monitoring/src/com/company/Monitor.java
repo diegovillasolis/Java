@@ -1,44 +1,53 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class Monitor {
-    private StringList stringList;
-    private int stringListLength;
+    private DataSource dataSource;
+    private int dataSourceLength;
     private Timer timer;
     private TimerTask task;
 
-    public Monitor(){
-        stringList = new StringList();
-        stringListLength = 0;
+    public DataSource getDataSource() {
+        return dataSource;
     }
 
-    public String verifyAdd(){
-        String res;
+    public void setDataSource(DataSource dataSource) {
+        this.dataSource = dataSource;
+        this.dataSourceLength = dataSource.size();
+    }
+
+    public String verifyAdd() throws InterruptedException {
+        final String[] res = new String[1];
+        res[0] = "";
         timer = new Timer();
         TimerTask task = new TimerTask() {
-            String res;
-            int stringListLengthCurrent = stringList.size();
+            int currentDataSourceLength = dataSource.size();
+            List<String> elementsAdded;
 
             @Override
             public void run()
             {
-                if(stringListLength!=stringListLengthCurrent){
-                    res = "The string " + "hola" + " has been added";
-                    stringListLength=stringListLengthCurrent;
-                }
-                else{
-                    res = "";
+                if(dataSourceLength < currentDataSourceLength){
+                    res[0] = "The string(s) ";
+                    elementsAdded = dataSource.subList(dataSourceLength, currentDataSourceLength);
+                    for (String e : elementsAdded){
+                        res[0] += e + " ";
+                    }
+                    res[0] += "has/have been added";
+                    dataSourceLength = currentDataSourceLength;
                 }
             }
         };
-//        timer.schedule(task, 10, 1000);
-//        int stringListLengthCurrent = stringList.size();
-//        if(stringListLength!=stringListLengthCurrent)
-//            return "The string " + "hola" + " has been added";
-//        else
-//            return "";
-        return "";
+        timer.schedule(task, 0, 1000);
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return res[0];
     }
 }
