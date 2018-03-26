@@ -8,6 +8,8 @@ import com.company.zoo.Dog;
 import com.company.zoo.RedCat;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Main {
@@ -57,5 +59,14 @@ public class Main {
         Student student = new Student("Pepe", 23, 23.3);
         Teacher teacher = new Teacher("Lucas", 23, "Biology");
         teacher.showDetails();
+
+        List<Integer> ints = new ArrayList<Integer>();
+        ints.add(2);
+        List<? extends Number> nums = ints;//Allowed becuase of wildcards
+//        nums.add(3.14); //This is not allowed now afeter setting an upperbound
+        ints.add(4);
+        System.out.println(nums);
+        Integer x = ints.get(1);
+        //xq, como
     }
 }
