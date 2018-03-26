@@ -17,8 +17,9 @@ public class Main {
     public static void main(String[] args) {
         //simpleCustomAnnotationMethod();
 //        completeCustomAnnotationMethod();
-        methodAnnotated();
+//        methodAnnotated();
 //        checkingInheritedAnnotation();
+        complexAnnotation();
     }
 
     @SuppressWarnings("deprecation")
@@ -64,5 +65,9 @@ public class Main {
         if(AnnotationImplementedClass.class.isAnnotationPresent(InheritedAnnotation.class)){
             System.out.println("#Inherited annotation is present on class (interface)");
         }
+    }
+
+    public static void complexAnnotation(){
+
     }
 }
