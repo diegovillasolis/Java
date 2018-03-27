@@ -1,4 +1,3 @@
-package ComplexAnnotation;
 
 @ComplexAnnotation(
         simpleAnnotation = @SimpleAnnotation(),

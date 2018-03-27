@@ -1,0 +1,6 @@
+this
+bind
+call similar to invoke en java
+apply
+
+extraer todos los metodos(elementos, todolo que es posible) de la clase object , ver si se puede instanciar

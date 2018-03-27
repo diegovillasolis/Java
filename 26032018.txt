@@ -1,0 +1,4 @@
+Annotation
+retention.Policy.Runtime
+
+- es posible definr custom annotation con otros tipos de datos: int, date, objects, generics,.... ejemplo

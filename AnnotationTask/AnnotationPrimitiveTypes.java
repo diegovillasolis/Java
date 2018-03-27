@@ -1,4 +1,3 @@
-package ComplexAnnotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,6 +6,9 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface AnnotationEnumTypes {
-        Level value();
+public @interface AnnotationPrimitiveTypes {
+    int    id();
+    String synopsis();
+    String engineer();
+    String date();
 }
