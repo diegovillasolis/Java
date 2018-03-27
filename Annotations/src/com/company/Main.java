@@ -3,6 +3,8 @@ package com.company;
 import BuilInAnnotatios.ChildClass;
 import CompleteCustomAnnotation.MyAnnotation;
 import CompleteCustomAnnotation.MyAnnotationClass;
+import ComplexAnnotation.ComplexAnnotationClass;
+import ComplexAnnotation.ComplexAnnotation;
 import CustomAnnotatedMethod.AnnotationMethod;
 import CustomAnnotatedMethod.AnnotationMethodClass;
 import InheritedAnnotation.AnnotatedSuperClass;
@@ -68,6 +70,10 @@ public class Main {
     }
 
     public static void complexAnnotation(){
-
+        Class<ComplexAnnotationClass> object = ComplexAnnotationClass.class;
+        Annotation[] annotations = object.getAnnotations();
+        for (Annotation annotation : annotations){
+            System.out.println(annotation);
+        }
     }
 }

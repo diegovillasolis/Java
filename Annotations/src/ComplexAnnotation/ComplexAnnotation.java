@@ -1,12 +1,19 @@
 package ComplexAnnotation;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
 public @interface ComplexAnnotation {
     public SimpleAnnotation simpleAnnotation();
-    int    id();        // Unique ID number associated with RFE
-    String synopsis();  // Synopsis of RFE
-    String engineer();  // Name of engineer who implemented RFE
-    String date();      // Date RFE was implemented
-    String[] values();
+    int    id();
+    String synopsis();
+    String engineer();
+    String date();
+    String[] values() default "default values";
     Class<? extends Number> integers();
     enum Level { BAD, INDIFFERENT, GOOD }
     Level value();
