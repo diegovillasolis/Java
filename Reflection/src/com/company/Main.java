@@ -1,7 +1,9 @@
 package com.company;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 public class Main {
@@ -11,7 +13,8 @@ public class Main {
         //invokeUnknownObject();
         //createObjectFromClass();
 //        createObjectFromConstructor();
-        changingArraySize();
+//        changingArraySize();
+        testObjectType();
     }
 
     public static void callSimpleFooReflection(){
@@ -106,8 +109,41 @@ public class Main {
 
         Object o = null;
         try {
-            o = (Foo) c.newInstance();
-            System.out.println(o);
+            o = c.newInstance();
+            System.out.println(o.hashCode());
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
+        Method[] methods;
+        try {
+            methods = c.getMethods();
+            for (Method m : methods){
+                System.out.println(m);
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
+        Field[] fields;
+        try {
+            fields = c.getFields();
+            for (Field f : fields){
+                System.out.println(f);
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
+        Annotation[] annotations;
+        try {
+            annotations = c.getAnnotations();
+            for (Annotation a : annotations){
+                System.out.println(a);
+            }
         }
         catch (Exception e){
             e.printStackTrace();
