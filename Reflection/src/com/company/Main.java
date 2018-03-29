@@ -110,6 +110,7 @@ public class Main {
         Object o = null;
         try {
             o = c.newInstance();
+            System.out.println("Object instance hashcode:");
             System.out.println(o.hashCode());
         }
         catch (Exception e){
@@ -119,6 +120,7 @@ public class Main {
         Method[] methods;
         try {
             methods = c.getMethods();
+            System.out.println("Object methods:");
             for (Method m : methods){
                 System.out.println(m);
             }
@@ -129,7 +131,8 @@ public class Main {
 
         Field[] fields;
         try {
-            fields = c.getFields();
+            fields = c.getDeclaredFields();
+            System.out.println("Object fields:");
             for (Field f : fields){
                 System.out.println(f);
             }
@@ -140,7 +143,8 @@ public class Main {
 
         Annotation[] annotations;
         try {
-            annotations = c.getAnnotations();
+            annotations = c.getDeclaredAnnotations();
+            System.out.println("Object Annotations:");
             for (Annotation a : annotations){
                 System.out.println(a);
             }
