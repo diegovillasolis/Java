@@ -1,0 +1,16 @@
+Enums.
+HR("DPTO-01")
+OPERATIONS("OPO-02")
+If/else posible usar enums?
+
+git clone repo
+cd repo
+git checkout develop
+git branch feature/diego.villarroel
+git checkout x
+cambios
+git status git diff
+git add .
+git commit 
+git push origin x
+open pull request
